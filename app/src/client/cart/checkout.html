@@ -1,0 +1,60 @@
+<div class="cart" ng-controller="cartController">
+	<h2>Checkout</h2>
+
+	<div class="col-md-4">
+		<form ng-submit="placeOrder()">
+			<div class="form-group">
+				<label>Name</label>
+				<input type="text" ng-model="form.name" class="form-control" placeholder="Enter name">
+			</div>
+			<div class="form-group">
+				<label>Address</label>
+				<input type="text" ng-model="form.address" class="form-control" placeholder="Enter address">
+			</div>
+			<div class="form-group">
+				<label>Zip</label>
+				<input type="number" ng-model="form.zip" class="form-control" placeholder="Enter ZIP">
+			</div>
+			<div class="form-group">
+				<label>City</label>
+				<input type="text" ng-model="form.city" class="form-control" placeholder="Enter city">
+			</div>
+			<div class="form-group">
+				<label>Phone</label>
+				<input type="phone" ng-model="form.phone" class="form-control" placeholder="Enter phone">
+			</div>
+			<div class="form-group">
+				<label>E-mail</label>
+				<input type="email" ng-model="form.email" class="form-control" placeholder="Enter e-mail">
+			</div>
+			<div class="form-group">
+				<label>Newsletter?</label>
+				<input type="checkbox" ng-model="form.newsletter">
+			</div>
+			<button type="submit" class="btn btn-success btn-block">Place Order</button>
+		</form>
+	</div>
+
+	<div class="col-md-8" ng-controller="cartController">
+		<table class="table table-bordered table-striped">
+			<tr>
+				<th></th>
+				<th>Qty</th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Total</th>
+			</tr>
+			<tr ng-repeat="item in cartProducts">
+				<td>
+					<form ng-submit="removeFromCart(item)">
+						<button type="submit" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+					</form>
+				</td>
+				<td><input type="number" class="form-control" ng-model="quantity" ng-init="quantity=item.quantity" ng-change="updateQuantity(item)" /></td>
+				<td>{{ item.product.name }}</td>
+				<td>{{ item.product.price }}</td>
+				<td>{{ item.total }}</td>
+			</tr>
+		</table>
+	</div>
+</div>

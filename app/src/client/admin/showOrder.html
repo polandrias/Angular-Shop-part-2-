@@ -1,0 +1,37 @@
+<div class="admin" ng-controller="adminController">
+	<h2><a href="/#/admin">Admin</a>: {{order.customerName}}</h2>
+
+	<hr />
+
+	<a href="#" class="btn btn-danger" ng-if="product._id" ng-click="deleteProduct()">Delete</a>
+	<a href="/#/admin/orders" class="btn btn-primary">Show Orders</a>
+
+	<hr />
+
+	<h2>Customer Info</h2>
+	<p><b>Name:</b> {{order.customerName}}</p>
+	<p><b>Address:</b> {{order.customerAddress}}</p>
+	<p><b>City:</b> {{order.customerCity}}</p>
+	<p><b>E-mail:</b> {{order.customerEmail}}</p>
+
+	<h2>The Order</h2>
+	<p><b>Note:</b> To view the order look in the console.</p>
+
+	<!-- <div class="table-responsive">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Product Name</th>
+					<th>Category</th>
+					<th class="text-right">Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in order.orderLines">
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div> -->
+
+</div>

@@ -1,0 +1,35 @@
+<div class="admin" ng-controller="adminController">
+	<h2><a href="/#/admin">Admin</a>: Products</h2>
+
+	<hr />
+
+	<a href="/#/admin/" class="btn btn-primary">Admin</a>
+	<a href="/#/admin/products/newProduct" class="btn btn-success">New Product</a>
+
+	<hr />
+
+	<div class="table-responsive">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Category</th>
+					<th>Price</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="product in products">
+					<td>{{product.name}}</td>
+					<td>{{product.category}}</td>
+					<td>DKK {{product.price}}</td>
+					<td>
+						<a href="#" class="btn btn-xs btn-danger" ng-click="deleteProduct(product._id)">Delete</a>
+						<a href="/#/admin/products/{{product._id}}" class="btn btn-xs btn-primary">Show</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

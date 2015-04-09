@@ -1,0 +1,31 @@
+<div class="row" ng-controller="productsController">
+	<div class="col-md-2">
+
+		<ng-include src="'./cart/cart-min.html'"></ng-include>
+
+	</div>
+	<div class="col-md-10">
+		<div class="row">
+
+			<div class="col-md-7">
+				<h3>{{product.name}}</h3>
+				<img ng-src="images/{{ product.image }}" alt="" />
+
+				<p>
+					<br />{{ product.description }}<br /><br />
+					<b>Price:</b> {{product.price}} DKK<br /><br />
+					
+				</p>
+			</div>
+
+			<div class="col-md-5">
+				<h3>Add to Cart</h3>
+				<form ng-submit="addToCart(product)" class="col-md-8 col-md-offset-2">
+					<input type="number" ng-model="quantity" ng-init="quantity=1" class="form-control" /><br />
+					<button type="submit" class="btn btn-success btn-block">Add to Cart</button>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<div class="row" ng-controller="productsController">
+	<div class="col-md-2">
+		
+		<ng-include src="'./includes/filters.html'"></ng-include>
+
+		<ng-include src="'./cart/cart-min.html'"></ng-include>
+
+	</div>
+	<div class="col-md-10">
+		<div class="row">
+			<ul class="product-overview">
+				<li class="col-md-4 col-sm-6 col-xs-6" ng-repeat="product in products | filter:categoryFilter">
+					<div class="item">
+						<a ng-href="#/product/{{product._id}}">
+							<h3>{{ product.name }}</h3>
+							<img ng-src="images/{{ product.image }}" alt="" />
+						</a>
+						<p>
+							<br />{{ product.description }}<br /><br />
+							<b>Price:</b> {{product.price}} DKK<br /><br />
+							<a ng-href="#/product/{{product._id}}">More Info</a>
+						</p>
+
+						<div class="row">
+
+							<div class="col-sm-12">
+								<form ng-submit="addToCart(product)">
+									<input type="number" ng-model="quantity" ng-init="quantity=1" />
+									<button type="submit" class="btn btn-success">Add to Cart</button>
+								</form>
+							</div>
+
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="Main">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Webshop</title>
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+
+		<div class="container">
+
+			<h1><a href="/#/">Computer Store</a></h1>
+
+			<div class="col-xs-12" ng-view>
+
+			</div>
+
+		</div>
+
+		<script src="node_modules/angular/angular.min.js"></script>
+		<script src="node_modules/angular-route/angular-route.min.js"></script>
+
+		<script src="app.module.js"></script>
+
+		<script src="cart/cart.service.js"></script>
+		<script src="products/products.service.js"></script>
+		<script src="admin/admin.service.js"></script>
+
+		<script src="cart/cart.controller.js"></script>
+		<script src="products/products.controller.js"></script>
+		<script src="products/product.controller.js"></script>
+		<script src="admin/admin.controller.js"></script>
+		
+	</body>
+</html>

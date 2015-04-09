@@ -1,0 +1,12 @@
+extends layout
+
+block body
+	h1 Products
+	ul.products
+		for product in products
+			li.product #{product}
+
+	ul
+		each val, key in products
+			if(products.hasOwnProperty(key))
+				li= key + ": " + val

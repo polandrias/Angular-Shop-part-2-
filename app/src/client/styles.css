@@ -1,0 +1,51 @@
+
+
+/* ---------------------------
+
+	TYPOGRAPHY
+
+--------------------------- */
+
+
+/* ---------------------------
+
+	GENERAL
+
+--------------------------- */
+
+img { max-width: 100%; height: auto; }
+
+
+/* ---------------------------
+
+	PRODUCT OVERVIEW
+
+--------------------------- */
+
+.product-overview { display: block; float: left; width: 100%; list-style: none; margin: 40px 0 0 0; padding: 0 0 0 0; }
+	
+	.product-overview .item { border: 1px solid #eee; padding: 10px; }
+		.product-overview .item h3 { margin: 0 0 8px 0; font-size: 15px; }
+		.product-overview .item img { max-width: 100%; height: auto; }
+
+
+
+/* ---------------------------
+
+	FILTER
+
+--------------------------- */
+
+.filter { display: block; float: left; width: 100%; margin: 40px 0 20p 0; padding: 0 0 0 0; }
+
+	.filter ul { list-style: none; margin: 0 0 0 0; padding: 0 0 0 0; }
+
+
+
+/* ---------------------------
+
+	CART
+
+--------------------------- */
+
+.cart { display: block; float: left; width: 100%; margin: 40px 0 0 0; padding: 0 0 0 0; }

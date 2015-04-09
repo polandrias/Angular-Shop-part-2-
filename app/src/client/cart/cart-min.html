@@ -1,0 +1,20 @@
+<div class="cart" ng-controller="cartController">
+	<h2>Cart</h2>
+	<table class="table table-bordered table-striped">
+		<tr>
+			<th></th>
+			<th>Qty</th>
+			<th>Name</th>
+		</tr>
+		<tr ng-repeat="item in cartProducts">
+			<td>
+				<form ng-submit="removeFromCart(item)">
+					<button type="submit" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+				</form>
+			</td>
+			<td>{{ item.quantity }}</td>
+			<td>{{ item.product.name }}</td>
+		</tr>
+	</table>
+	<a ng-href="#/checkout/basket" class="btn btn-block btn-success">Checkout</a>
+</div>

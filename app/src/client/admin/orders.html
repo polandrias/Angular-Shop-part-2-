@@ -1,0 +1,32 @@
+<div class="admin" ng-controller="adminController">
+	<h2><a href="/#/admin">Admin</a>: Orders</h2>
+
+	<hr />
+
+	<a href="/#/admin/" class="btn btn-primary">Admin</a>
+
+	<hr />
+
+	<div class="table-responsive">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Customer</th>
+					<th>Address</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="order in orders">
+					<td>{{order.customerName}}</td>
+					<td>{{order.customerAddress}}</td>
+					<td>
+						<a href="#" class="btn btn-xs btn-danger" ng-click="deleteProduct()">Delete</a>
+						<a href="/#/admin/orders/{{order._id}}" class="btn btn-xs btn-primary">Show</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>
