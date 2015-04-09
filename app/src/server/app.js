@@ -1,10 +1,17 @@
 // Initialize the express framework
 var express 	 	= require('express'),
 	path			= require('path'),
-	mongoose		= require('mongoose'),
 	bodyParser		= require('body-parser'),
-	databaseName	= 'angular_shop',
+	mongoose		= require('mongoose'),
+	username		= 'polandrias',
+	password		= 'DoNotEnter01',
+	databaseserver	= 'ds039281.mongolab.com:39281',
+	databasename	= 'angular_shop',
 	routes 			= require('./routes');
+
+
+
+	mongodb://<dbuser>:<dbpassword>@ds039281.mongolab.com:39281/angular_shop
 
 // Express setup 
 var app = express();
@@ -59,7 +66,8 @@ app.get('/admin/products', routes.products);
 // Register the routing
 app.use('/', router);
 
-mongoose.connect('mongodb://localhost/' + databaseName);
+// mongoLab connection-string
+mongoose.connect('mongodb://' + username + ':' + password + '@' + databaseserver + '/' + databasename);
 
 var db = mongoose.connection;
 db.on('error', console.error);
