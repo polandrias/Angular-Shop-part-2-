@@ -6,23 +6,14 @@ var express 	 	= require('express'),
 	username		= 'polandrias',
 	password		= 'DoNotEnter01',
 	databaseserver	= 'ds039281.mongolab.com:39281',
-	databasename	= 'angular_shop',
-	routes 			= require('./routes');
+	databasename	= 'angular_shop';
 
-
-
-	mongodb://<dbuser>:<dbpassword>@ds039281.mongolab.com:39281/angular_shop
 
 // Express setup 
 var app = express();
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, '../client'))); // where are the html files (client-side) located
-
-// path to jade views
-app.set('views', __dirname + '/views');
-// template engine
-app.set('view engine', 'jade');
 
 // Routes set up
 var router 	= express.Router();
@@ -54,14 +45,6 @@ router.route('/api/order/:id')
 
 // get categories API
 router.get('/api/categories', category.getAll);
-
-// backend
-// router.route('/admin', function(res, req){
-// 	res.render('index.jade');
-// });
-
-app.get('/admin', routes.index);
-app.get('/admin/products', routes.products);
 
 // Register the routing
 app.use('/', router);
