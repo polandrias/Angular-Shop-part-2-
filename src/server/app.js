@@ -57,9 +57,12 @@ db.on('error', console.error);
 db.once('open', startServer);
 
 
+var port = process.env.PORT || 3000;
+
+
 // Start up the server
 function startServer(){
-	var server = app.listen(3000, function(){
+	var server = app.listen(port, function(){
 		var port = server.address().port;
 		console.log('Listening on port ' + port);
 	})
